@@ -1,0 +1,33 @@
+ entity Address {
+line1 String,
+line2 String,
+country String,
+state String,
+city String,
+pincode Integer,
+}
+
+entity Employee {
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+}
+
+relationship ManyToOne {
+  Address{employee} to Employee
+}
+
+ // Set pagination options
+paginate * with infinite-scroll
+paginate * with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service * with serviceClass
+
+filter *
+// Set an angular suffix
+// angularSuffix * with tvg
