@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="address">
+      <h2 data-cy="addressDetailsHeading"><span>Address</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Translation missing for global.field.id</span></dt>
+        <dd>
+          <span>{{ address.id }}</span>
+        </dd>
+        <dt><span>Line 1</span></dt>
+        <dd>
+          <span>{{ address.line1 }}</span>
+        </dd>
+        <dt><span>Line 2</span></dt>
+        <dd>
+          <span>{{ address.line2 }}</span>
+        </dd>
+        <dt><span>Country</span></dt>
+        <dd>
+          <span>{{ address.country }}</span>
+        </dd>
+        <dt><span>State</span></dt>
+        <dd>
+          <span>{{ address.state }}</span>
+        </dd>
+        <dt><span>City</span></dt>
+        <dd>
+          <span>{{ address.city }}</span>
+        </dd>
+        <dt><span>Pincode</span></dt>
+        <dd>
+          <span>{{ address.pincode }}</span>
+        </dd>
+        <dt><span>Employee</span></dt>
+        <dd>
+          <div *ngIf="address.employee">
+            <a [routerLink]="['/employee', address.employee.id, 'view']">{{ address.employee.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Translation missing for entity.action.back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/address', address.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Translation missing for entity.action.edit</span>
+      </button>
+    </div>
+  </div>
+</div>

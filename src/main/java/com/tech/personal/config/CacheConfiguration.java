@@ -38,6 +38,8 @@ public class CacheConfiguration {
         return cm -> {
             createCache(cm, com.tech.personal.repository.UserRepository.USERS_BY_LOGIN_CACHE);
             createCache(cm, com.tech.personal.repository.UserRepository.USERS_BY_EMAIL_CACHE);
+            createCache(cm, com.tech.personal.domain.Address.class.getName());
+            createCache(cm, com.tech.personal.domain.Employee.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
